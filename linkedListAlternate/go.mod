@@ -1,3 +1,3 @@
-module example.com/learning-go/linked_list
+module example.com/learning-go/linkedListAlternate
 
 go 1.19
