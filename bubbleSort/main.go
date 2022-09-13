@@ -1,4 +1,6 @@
 // bubblesort implementation
+// time complexity is O(n2)
+// space complexity is O(1)
 
 package main
 
