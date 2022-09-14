@@ -23,20 +23,21 @@ func findNearestBoss(e1, e2 *Employee) (*Employee, error) {
 		return nil, errors.New("e2 is the ceo")
 	}
 
-	// iterate through e1's boss chain until the CEO (where manager == nil)
-	// write the id's of each boss in the chain to bosses map
+	// iterate through e1's manager chain until the CEO (where manager == nil)
+	// write the id's of each manager in the chain to bossMap
 	for n := e1.manager; n != nil; n = n.manager {
 		bossMap[n.id] = true
 	}
 
-	// iterate through e2's boss chain, check if each employee is contained in
-	// e1's boss chain. The first one which is contained will be the closest shared boss
+	// iterate through e2's manager chain, check if each employee is contained in
+	// bossMap. The first one which is contained will be the closest shared boss
 	for n := e2.manager; n != nil; n = n.manager {
 		if _, ok := bossMap[n.id]; ok {
 			return n, nil
 		}
 	}
 
+	// if either of the employees is unassigned or not connected at all
 	return nil, errors.New("no shared boss found")
 }
 
