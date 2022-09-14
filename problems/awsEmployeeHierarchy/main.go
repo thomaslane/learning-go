@@ -13,6 +13,8 @@ type Employee struct {
 	reportees []*Employee // not really needed for this solution as only manager pointers are used
 }
 
+// worst case time complexity would be O(n)
+// this would occur if there were two direct lines of management with the ceo as the closest shared manager
 func findNearestBoss(e1, e2 *Employee) (*Employee, error) {
 	bossMap := map[int]bool{}
 
