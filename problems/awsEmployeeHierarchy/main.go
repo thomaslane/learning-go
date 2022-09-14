@@ -42,13 +42,13 @@ func findNearestBoss(e1, e2 *Employee) (*Employee, error) {
 
 func main() {
 	// employee hierarchy
-	// 		  ceo: joe
-	//		/			\
-	//	e2: bob		e3: jake
-	//				/		\
-	//			e4: jess	e5: nick
-	//							\
-	//							e6: dan
+	//         ceo: joe
+	//       /         \
+	// e2: bob       e3: jake
+	//              /       \
+	//          e4: jess    e5: nick
+	//                          \
+	//                         e6: dan
 
 	ceo := &Employee{id: 1, name: "joe"}
 	e2 := &Employee{id: 2, name: "bob"}
