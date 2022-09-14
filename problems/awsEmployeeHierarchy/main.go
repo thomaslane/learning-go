@@ -10,7 +10,7 @@ type Employee struct {
 	id        int
 	name      string
 	manager   *Employee
-	reportees []*Employee
+	reportees []*Employee // not really needed for this solution as only manager pointers are used
 }
 
 func findNearestBoss(e1, e2 *Employee) (*Employee, error) {
